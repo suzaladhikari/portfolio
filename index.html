@@ -1,11 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Data Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f3ee;
+    --ink: #1a1814;
+    --muted: #8a8680;
+    --accent: #2d5a3d;
+    --line: #d8d4cc;
+    --serif: 'Playfair Display', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 32px; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: 24px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 100;
+    background: var(--bg);
+  }
+  nav .logo {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  nav ul { list-style: none; display: flex; gap: 32px; }
+  nav ul a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding-bottom: 80px;
+    padding-top: 120px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-number {
+    position: absolute;
+    top: 50%; right: 32px;
+    transform: translateY(-50%);
+    font-family: var(--serif);
+    font-size: clamp(120px, 20vw, 240px);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--line);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(42px, 7vw, 80px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 560px;
+  }
+  h1 em { font-style: italic; color: var(--muted); }
+  .hero-sub {
+    margin-top: 32px;
+    color: var(--muted);
+    max-width: 360px;
+  }
+  .hero-links {
+    margin-top: 48px;
+    display: flex; gap: 24px; align-items: center;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .btn.ghost { border-color: var(--line); color: var(--muted); }
+
+  hr { border: none; border-top: 1px solid var(--line); margin: 80px 0; }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 48px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .section-label::after { content: ''; flex: 1; border-top: 1px solid var(--line); }
+
+  #about { padding: 100px 0; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .about-text h2 {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 24px;
+  }
+  .about-text p { color: var(--muted); line-height: 1.8; }
+  .about-text p + p { margin-top: 16px; }
+
+  .skill-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+  }
+  .skill-item:first-child { border-top: 1px solid var(--line); }
+  .skill-bar {
+    width: 80px; height: 2px;
+    background: var(--line);
+    position: relative;
+  }
+  .skill-fill {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    background: var(--accent);
+  }
+
+  #work { padding: 100px 0; }
+  .project {
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 24px;
+    align-items: start;
+    text-decoration: none;
+    color: inherit;
+  }
+  .project:last-child { border-bottom: 1px solid var(--line); }
+  .project-num { font-size: 11px; color: var(--muted); padding-top: 4px; }
+  .project-info h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .project-info p { color: var(--muted); font-size: 12px; max-width: 380px; }
+  .project-tags { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; padding-top: 4px; }
+  .tag {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+  }
+
+  #stats { padding: 80px 0; }
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .stat { background: var(--bg); padding: 40px 32px; text-align: center; }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; }
+
+  #contact { padding: 100px 0 140px; }
+  .contact-inner { max-width: 480px; }
+  .contact-inner h2 {
+    font-family: var(--serif);
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  .contact-inner p { color: var(--muted); margin-bottom: 40px; }
+  .contact-link {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 12px;
+  }
+  .contact-link:last-child { border-bottom: 1px solid var(--line); }
+  .contact-link span { color: var(--muted); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  footer {
+    padding: 32px;
+    display: flex; justify-content: space-between;
+    border-top: 1px solid var(--line);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    nav ul { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .project { grid-template-columns: 32px 1fr; }
+    .project-tags { display: none; }
+    .stats-row { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-    
-</body>
-</html>
+
+<nav>
+  <a href="#" class="logo">J. Smith</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="hero">
+    <div class="container">
+      <div class="hero-number">DS</div>
+      <p class="hero-tag">Data Scientist — Available for work</p>
+      <h1>Turning <em>messy data</em> into clear decisions.</h1>
+      <p class="hero-sub">I build models, find patterns, and tell the story hidden in numbers. 4 years working across fintech, healthcare, and consumer tech.</p>
+      <div class="hero-links">
+        <a href="#work" class="btn">View Projects</a>
+        <a href="#contact" class="btn ghost">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <hr>
+
+    <section id="about">
+      <p class="section-label">About</p>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>I make data work for people, not the other way around.</h2>
+          <p>Based in New York. I specialize in machine learning, statistical modeling, and data visualization — with a focus on making outputs actually usable by the humans who need them.</p>
+          <p>Previously at Stripe, currently open to senior DS and lead roles. I care about impact, not just accuracy.</p>
+        </div>
+        <div class="skills-list">
+          <div class="skill-item"><span>Python / SQL</span><div class="skill-bar"><div class="skill-fill" style="width:96%"></div></div></div>
+          <div class="skill-item"><span>Machine Learning</span><d
