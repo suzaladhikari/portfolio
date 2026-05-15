@@ -5,30 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sujal Adhikari — Data Scientist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-  <a href="#" class="logo">Sujal Adhikari</a>
+  <a href="#hero" class="logo">Sujal Adhikari</a>
   <ul>
     <li><a href="#about">About</a></li>
-    <li><a href="#work">Work</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <main>
+
+  <!-- Hero -->
   <section id="hero">
     <div class="container">
       <div class="hero-number">DS</div>
       <p class="hero-tag">Data Scientist — Available for work</p>
       <h1>Turning <em>messy data</em> into clear decisions.</h1>
-      <p class="hero-sub">I build models, find patterns, and tell the story hidden in numbers. 4 years working across fintech, healthcare, and consumer tech.</p>
+      <p class="hero-sub">I build models, find patterns, and tell the story hidden in numbers. Passionate about turning raw data into real-world impact.</p>
       <div class="hero-links">
-        <a href="#work" class="btn">View Projects</a>
-        <a href="#contact" class="btn ghost">Get in Touch</a>
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="resume.pdf" download class="btn ghost">Download Resume ↓</a>
       </div>
     </div>
   </section>
@@ -36,13 +40,14 @@
   <div class="container">
     <hr>
 
+    <!-- About -->
     <section id="about">
       <p class="section-label">About</p>
       <div class="about-grid">
         <div class="about-text">
           <h2>I make data work for people, not the other way around.</h2>
           <p>Based in New York. I specialize in machine learning, statistical modeling, and data visualization — with a focus on making outputs actually usable by the humans who need them.</p>
-          <p>Previously at Stripe, currently open to senior DS and lead roles. I care about impact, not just accuracy.</p>
+          <p>I care about impact, not just accuracy. Every model I build is meant to solve a real problem for a real person.</p>
         </div>
         <div class="skills-list">
           <div class="skill-item"><span>Python / SQL</span><div class="skill-bar"><div class="skill-fill" style="width:96%"></div></div></div>
@@ -57,18 +62,107 @@
 
     <hr>
 
-    <section id="stats">
-      <div class="stats-row">
-        <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Projects shipped</div></div>
-        <div class="stat"><div class="stat-num">4yr</div><div class="stat-label">Industry experience</div></div>
-        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Industries served</div></div>
+    <!-- Education -->
+    <section id="education">
+      <p class="section-label">Education</p>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2021 — 2023</span>
+          </div>
+          <div class="timeline-right">
+            <h3>M.S. Data Science</h3>
+            <p class="timeline-place">Columbia University, New York</p>
+            <p class="timeline-desc">Focused on machine learning, probabilistic modeling, and large-scale data systems. Thesis on causal inference in healthcare datasets.</p>
+            <div class="timeline-tags">
+              <span class="tag">GPA 3.9</span>
+              <span class="tag">Dean's List</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2017 — 2021</span>
+          </div>
+          <div class="timeline-right">
+            <h3>B.S. Computer Science & Statistics</h3>
+            <p class="timeline-place">University of Michigan, Ann Arbor</p>
+            <p class="timeline-desc">Double major with a minor in Mathematics. Undergraduate research in natural language processing and sentiment analysis.</p>
+            <div class="timeline-tags">
+              <span class="tag">GPA 3.8</span>
+              <span class="tag">Summa Cum Laude</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <hr>
 
-    <section id="work">
-      <p class="section-label">Selected work</p>
+    <!-- Experience -->
+    <section id="experience">
+      <p class="section-label">Experience</p>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2023 — Present</span>
+          </div>
+          <div class="timeline-right">
+            <h3>Senior Data Scientist</h3>
+            <p class="timeline-place">Stripe — San Francisco, CA</p>
+            <p class="timeline-desc">Led fraud detection modeling across 50M+ transactions per day. Built real-time ML pipelines on AWS and reduced false positives by 31%.</p>
+            <div class="timeline-tags">
+              <span class="tag">Python</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Kafka</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2022 — 2023</span>
+          </div>
+          <div class="timeline-right">
+            <h3>Data Scientist</h3>
+            <p class="timeline-place">Flatiron Health — New York, NY</p>
+            <p class="timeline-desc">Designed NLP pipelines to extract adverse event signals from clinical notes. Saved 2,000+ hours of manual review per year.</p>
+            <div class="timeline-tags">
+              <span class="tag">NLP</span>
+              <span class="tag">BERT</span>
+              <span class="tag">GCP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-left">
+            <span class="timeline-date">2021 — 2022</span>
+          </div>
+          <div class="timeline-right">
+            <h3>Data Science Intern</h3>
+            <p class="timeline-place">Amazon — Seattle, WA</p>
+            <p class="timeline-desc">Built demand forecasting models for logistics optimization. Improved delivery time predictions by 14% using gradient boosting ensembles.</p>
+            <div class="timeline-tags">
+              <span class="tag">XGBoost</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Redshift</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Projects -->
+    <section id="projects">
+      <p class="section-label">Projects</p>
       <div class="project-list">
 
         <a href="#" class="project">
@@ -107,24 +201,46 @@
           <div class="project-tags"><span class="tag">Streaming</span><span class="tag">Kafka</span></div>
         </a>
 
+        <a href="#" class="project">
+          <span class="project-num">05</span>
+          <div class="project-info">
+            <h3>LLM-Powered Research Assistant</h3>
+            <p>RAG pipeline over 10,000+ academic papers. Returns cited, accurate answers grounded in real research.</p>
+          </div>
+          <div class="project-tags"><span class="tag">LangChain</span><span class="tag">OpenAI</span></div>
+        </a>
+
       </div>
     </section>
 
     <hr>
 
+    <!-- Stats -->
+    <section id="stats">
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Projects shipped</div></div>
+        <div class="stat"><div class="stat-num">4yr</div><div class="stat-label">Industry experience</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Industries served</div></div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Contact -->
     <section id="contact">
       <p class="section-label">Contact</p>
       <div class="contact-inner">
         <h2>Let's build something worth building.</h2>
         <p>Open to senior DS roles, consulting, and interesting research collaborations. Response time is usually under 24h.</p>
+        <a href="resume.pdf" download class="btn resume-btn">Download Resume ↓</a>
         <div class="contact-links">
-          <a href="mailto:hello@sujalahikari.io" class="contact-link">hello@sujaladhikari.io <span>Email →</span></a>
+          <a href="mailto:hello@sujaladhikari.io" class="contact-link">hello@sujaladhikari.io <span>Email →</span></a>
           <a href="#" class="contact-link">LinkedIn <span>Connect →</span></a>
           <a href="#" class="contact-link">GitHub <span>Explore →</span></a>
-          <a href="#" class="contact-link">Resume <span>Download →</span></a>
         </div>
       </div>
     </section>
+
   </div>
 </main>
 
