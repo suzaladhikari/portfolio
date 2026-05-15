@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'Berghan';
+  src: url('https://db.onlinewebfonts.com/t/berghan.woff2') format('woff2'),
+       url('https://db.onlinewebfonts.com/t/berghan.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f5f3ee;
+  --ink: #1a1814;
+  --muted: #8a8680;
+  --accent: #2d5a3d;
+  --line: #d8d4cc;
+  --berghan: 'Berghan', Georgia, serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--berghan);
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.container { max-width: 680px; margin: 0 auto; padding: 0 32px; }
+
+/* Nav */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  padding: 24px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 100;
+  background: var(--bg);
+}
+nav .logo {
+  font-family: var(--berghan);
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+nav ul { list-style: none; display: flex; gap: 32px; }
+nav ul a {
+  text-decoration: none;
+  color: var(--muted);
+  font-family: var(--berghan);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Hero */
+#hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-bottom: 80px;
+  padding-top: 120px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-number {
+  position: absolute;
+  top: 50%; right: 32px;
+  transform: translateY(-50%);
+  font-family: var(--berghan);
+  font-size: clamp(120px, 20vw, 240px);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+  line-height: 1;
+  user-select: non
